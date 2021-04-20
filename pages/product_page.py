@@ -25,3 +25,11 @@ class Product_page(BasePage):
         basket_button = self.browser.find_element(*ProductPageLocators.BASKET_BUTTON)
         basket_button.click()
         self.solve_quiz_and_get_code()
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ELEMENT_ADDED), \
+            "Success message is presented, but should not be"
+
+    def should_success_message_disappered(self):
+        assert self.is_disappeared(*ProductPageLocators.ELEMENT_ADDED), \
+            "Success message is presented, but should not be"
