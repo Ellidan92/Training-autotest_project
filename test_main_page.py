@@ -5,7 +5,9 @@ import pytest
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
+    # сьют для проверки страницы логина
     def test_guest_can_go_to_login_page(self, browser):
+        # тест проверяющий переход на страницу авторизации
         link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser,link)
         page.open()
@@ -14,12 +16,14 @@ class TestLoginFromMainPage():
         login_page.should_be_login_page()
 
     def test_guest_should_see_login_link(self, browser):
+        # тест проверяющий присутствие кнопки перехода на страницу авторизации
         link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser,link)
         page.open()
         page.should_be_login_link()
 
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    # тест проверяющий что при открытии с главной страницы, корзины, она пуста и есть сообщение, что она пуста.
     link = "http://selenium1py.pythonanywhere.com/"
     page = MainPage(browser, link)
     page.open()
@@ -30,6 +34,7 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket_page.should_be_message_empty_basket()
 
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    # тест проверяющий что при открытии со страницы продукта, корзины, она пуста и есть сообщение, что она пуста.
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = MainPage(browser, link)
     page.open()

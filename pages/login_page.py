@@ -3,6 +3,7 @@ from .locators import LoginPageLocators
 
 class LoginPage(BasePage):
     def should_be_login_page(self):
+        # запуск функции проверки элементов страницы корзины
         self.should_be_login_url()
         self.should_be_login_form()
         self.should_be_register_form()
@@ -23,17 +24,20 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.LOGIN_REGISTER_FORM), "Login register form is not presented"
 
     def should_be_login_register_email(self):
+        # проверка, что есть текстовое поле для ввода логина на форме регистрации
         assert self.is_element_present(*LoginPageLocators.LOGIN_REGISTER_EMAIL), "Login register email element is not presented"
 
     def should_be_login_register_password(self):
+        # проверка, что есть текстовое поле для ввода пароля на форме регистрации
         assert self.is_element_present(*LoginPageLocators.LOGIN_REGISTER_PASS), "Login register password element is not presented"
 
     def should_be_login_register_password_repeat(self):
+        # проверка, что есть текстовое поле для повторного ввода пароля на форме регистрации
         assert self.is_element_present(*LoginPageLocators.LOGIN_REGISTER_PASS_REPEAT), "Login register password repeat element is not presented"
 
 
     def register_new_user(self, email, password):
-        #регистрация нонового пользователя
+        #регистрация нового пользователя
         self.browser.find_element(*LoginPageLocators.LOGIN_REGISTER_EMAIL).send_keys(email)
         self.browser.find_element(*LoginPageLocators.LOGIN_REGISTER_PASS).send_keys(password)
         self.browser.find_element(*LoginPageLocators.LOGIN_REGISTER_PASS_REPEAT).send_keys(password)
