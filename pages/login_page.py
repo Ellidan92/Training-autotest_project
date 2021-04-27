@@ -26,7 +26,7 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.LOGIN_REGISTER_EMAIL), "Login register email element is not presented"
 
     def should_be_login_register_password(self):
-        assert self.is_element_present(*LoginPageLocators.LOGIN_REGISTER_pass), "Login register password element is not presented"
+        assert self.is_element_present(*LoginPageLocators.LOGIN_REGISTER_PASS), "Login register password element is not presented"
 
     def should_be_login_register_password_repeat(self):
         assert self.is_element_present(*LoginPageLocators.LOGIN_REGISTER_PASS_REPEAT), "Login register password repeat element is not presented"

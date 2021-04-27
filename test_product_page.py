@@ -31,7 +31,7 @@ class TestUserAddToBasketFromProductPage():
         page.should_be_element_name_is_right()
         page.should_be_element_price_is_right()
 
-def test_guest_cant_see_success_message(self, browser):
+def test_guest_cant_see_success_message(browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear"
     page = Product_page(browser, link)
     page.open()
