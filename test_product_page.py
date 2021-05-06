@@ -45,7 +45,7 @@ def test_guest_cant_see_success_message(browser):
     page.should_not_be_success_message()
 
 @pytest.mark.need_review
-def test_user_can_add_product_to_basket(browser):
+def test_guest_can_add_product_to_basket(browser):
     # тест для проверки того, что при открытии страницы продукта необходимые элементы присутсвуют
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear"
     page = Product_page(browser, link)
